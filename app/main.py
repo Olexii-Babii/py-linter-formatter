@@ -14,12 +14,11 @@ def format_single_linter_file(file_path: str, errors: list) -> dict:
                         "name": error["code"],
                         "source": "flake8"}
                        for error in errors],
-            "path": file_path, "status": "failed"
-            if errors else {
+            "path": file_path, "status": "failed"} if errors else {
         "errors": [],
         "path": file_path,
         "status": "passed"
-    }}
+    }
 
 
 def format_linter_report(linter_report: dict) -> list:
